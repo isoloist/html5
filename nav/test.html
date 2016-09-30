@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+/*		div{
+			display: inline-block;
+		}*/
+
+		.item{
+			width: 100px;
+			height: 40px;
+			border: 1px solid #000;
+			text-align: center;
+			cursor: pointer;
+			background-color: transparent;
+			-webkit-transition: 1s ease-in-out;
+    		-moz-transition: 1s ease-in-out;
+    		-o-transition: 1s ease-in-out;
+		}
+
+/*		.hoverable{
+			background-color: transparent;
+		}*/
+
+		.hoverable:hover{
+			/*width: 200px;*/
+			/*height: 40px;*/
+			background: red;
+			/*opacity: 0.4;*/
+			/*-moz-opacity: 0.4;*/
+			-webkit-transform: translate(3em, 0);
+			-moz-transform: translate(3em, 0);
+			transform: translate(3em,0) 2s;
+			/*-moz-transition: ;*/
+			/*transition: 1s ease-in-out;*/
+		}
+
+		.hoverable:active{
+
+		}
+
+		.demo{
+			width: 300px;
+			background: #60f;
+		}
+
+		.box {
+			/*width: 100%;*/
+			width: calc(100% - (10px +5px) * 2);
+			width: -webkit-calc(100% - (10px +5px) * 2);
+			width: -moz-calc(100% - (10px +5px) * 2);
+			background: #f60;
+			height: 50px;
+			padding: 10px;
+			border: 5px solid #000;
+		}
+
+		.fly-box {
+			width: 40px;
+			height: 40px;
+			background-color: red; 
+			-webkit-transition: transform 2s cubic-bezier(0, 0.2, 0.6, 1);
+			-moz-transition: transform 2s cubic-bezier(0, 0.2, 0.6, 1);
+			transition: transform 2s cubic-bezier(0, 0.2, 0.6, 1);
+		}
+
+		.box:hover + .fly-box {
+			-webkit-transform: translateX(200px);
+			-moz-transform: translateX(200px);
+			transform: translateX(200px);
+		}
+
+		.s-box {
+			height: 100px;
+			width: 100px;
+			background-color: #713e3f;
+			/*border: 1px solid #000;*/
+			box-shadow: 0 0 0 10px rgba(0, 0, 0, .03), 0 0 0 10px rgba(255, 255, 255, .22) inset;
+			transition: all .5s linear; 
+		}
+
+		.s-box:hover{
+			box-shadow: 0 0 0 10px rgba(0, 0, 0, .03);
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+
+		/*@-webkit-keyframes spin{*/
+			/*0% {--webkit-transform: rotate(0deg)}*/
+			/*100% {-webkit-transform: rotate(360deg)}*/
+		/*}*/
+
+		.nav {
+			/*border: 1px solid #713e3f;*/
+			/*background-color: #713e3f: */
+			/*height: 45px;*/
+		}
+
+		ul{
+			list-style: none;
+			float: left;
+			margin: 0;
+			padding: 0;
+			background-color: #713e3f;
+			display: block;
+		}	
+
+		ul li {
+			display: inline-block;
+			padding: 10px 20px;
+			border: 1px solid #ffffff;
+			border-width: 0 1px 0 0;
+			transition: all ease-in-out 0.2s;
+			position: relative;
+		}
+
+		ul li a{
+			width: 100%;
+			text-decoration: none;
+			color: #ffffff;
+		}
+
+		ul li:hover{
+			background-color: #703e71;
+			transform: background ease-in-out .2s;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.menu {
+			width: 120px;
+			height: auto;
+			display: none;
+			cursor: pointer;
+			position: relative;
+		}
+
+		.menu .content{
+			position: absolute;
+			top: 10px;
+			left: 0px;
+			background-color: #713e3f;
+			padding: 5px 10px;
+			box-shadow: 0 0 10px #583031;
+			color: #fff;
+		}
+		.menu .arrow {
+			position: absolute;
+			top:0;
+			left: calc(50% - 10px);
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 12px solid #713e3f;
+		}
+
+		ul li:hover .menu{
+			display: block;
+			position: absolute;
+			top: 42px;
+			left: 0;
+			z-index: 999;
+		}
+
+		.tab-header {
+			height: 40px;
+			width: 200px;
+			background-color: #713e3f;
+			color: #fff; 
+		}
+
+		.tab-header:after {
+			height: 0;
+			border-bottom: 40px solid red;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			width: 40px;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<div class="tab-header"></div>
+</div>
+<div>
+<!-- 	<div>
+		<div class="item hoverable">TellMe</div>
+	</div> -->
+	<div class="demo">
+		<div class="box"></div>
+	</div>
+
+	<div class="fly-box"></div>
+
+	<div class="s-box"></div>
+
+	<nav class="nav">
+		<ul>
+			<li>
+				<a href="javascript:;">主页</a>
+				<!-- <div class="menu-wrapper"> -->
+					<div class="menu">
+						<div style="width: 100%;height: 12px;">
+							<div class="arrow"></div>
+						</div>	
+						<div class="content">
+							<p>
+							例如，假如您需要并排放置两个带边框的框，可通过将 box-sizing 设置为 "border-box"。这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。
+							</p>
+						</div>	
+					</div>
+				<!-- </div> -->
+			</li>
+			<li>
+				<a href="javascript:;">电视剧</a>
+			</li>
+			<li>
+				<a href="javascript:;">电影</a>
+			</li>
+			<li>
+				<a href="javascript:;">综艺</a>
+			</li>
+			<li>
+				<a href="javascript:;">美剧</a>
+			</li>
+			<li>
+				<a href="javascript:;">动漫</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+
+</body>
+</html>

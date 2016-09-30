@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dropdown</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+		.dropdown, .dropdown-list{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.dropdown{
+			position: relative;
+			width: 200px;
+		}
+
+		.dropdown-list{
+			position: absolute;
+			left: 0px;
+			top: 100%;
+			/*width: 200px;*/
+			visibility: hidden;
+			background-color: #16edf1;
+			-webkit-transition: all ease-in-out .5s;
+			-moz-transition: all ease-in-out .5s;
+			transition: all ease-in-out .5s;
+		}
+
+		.dropdown a, .dropdown-list a{
+			color: #555;
+			text-decoration: none;
+		}
+
+		.dropdown:hover .dropdown-list {
+			visibility: visible;
+			transform: translateY(0%);
+		}
+
+
+		.dropdown li , .dropdown-list li{
+			background-color: #16edf1;
+			text-align: left;
+			padding: 10px 20px;
+		}
+
+		.dropdown li.seperator, .dropdown-list li.seperator{
+			/*display: inline-block;*/
+			height: 0px;
+			border-top: 1px solid #ffffff;
+		}
+	</style>
+</head>
+<body>
+
+<ul class="dropdown">
+	<li class="item"><a href="javascript:;">Dropdown</a></li>
+	<ul class="dropdown-list">
+		<!-- <li class="seperator"></li> -->
+		<li>
+			<a href="javascript:;">Dong</a>
+		</li>
+		<!-- <li class="seperator"></li> -->
+		<li>
+			<a href="javascript">Tang</a>
+		</li>
+		<!-- <li class="seperator"></li> -->
+		<li>
+			<a href="javascript:;">Geng</a>
+		</li>
+		<!-- <li class="seperator"></li> -->
+		<li>
+			<a href="javascript:;">Yang</a>
+		</li>
+	</ul>	
+</ul>
+
+</body>
+</html>
